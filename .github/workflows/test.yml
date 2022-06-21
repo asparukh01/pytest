@@ -19,6 +19,7 @@ jobs:
           POSTGRES_DB: postgres
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+          SECRET_KEY: django-insecure-bbp5kln3$iqjjmm_j^)66ivw5y7=$hxmr5-nxk1v0eoh&7omyi
         ports:
           - 5432:5432	
     steps:
@@ -30,9 +31,7 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-      env:
-      	SECRET_KEY: 'django-insecure-bbp5kln3$iqjjmm_j^)66ivw5y7=$hxmr5-nxk1v0eoh&7omyi'	 
+        pip install -r requirements.txt	 
     - name: Run Tests
       run: |
         python manage.py test
