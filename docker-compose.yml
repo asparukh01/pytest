@@ -1,0 +1,71 @@
+version: '3'
+
+services:
+  web:
+    container_name: gservicegroup
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000 --workers 3
+    volumes:
+      - static_volume:/app/static
+    env_file:
+      - .env_prod
+    expose:
+      - 8000
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env_prod.db
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis:/data
+
+  celery:
+    container_name: celery
+    image: celery
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile_celery
+    volumes:
+      - .:/app
+    env_file:
+      - .env_prod
+    links:
+      - redis
+    depends_on:
+      - redis
+      - web
+
+  nginx:
+    build: ./nginx
+    image: nginx:latest
+    restart: always
+    container_name: nginx
+    volumes:
+      - static_volume:/app/static
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - web
+volumes:
+  postgres_data:
+  redis:
+  static_volume:
