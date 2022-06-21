@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1 class="mb-4">Добавить Собственность</h1>
+    <hr>
+    <div class="card border-secondary">
+        <div class="card-body">
+            {% include 'partials/own/own_form.html' %}
+        </div>
+    </div>
+
+{% endblock content %}
+{% block js_block %}
+    <script src="{% static 'js/own/own_create.js' %}"></script>
+{% endblock %}

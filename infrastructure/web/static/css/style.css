@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(236, 236, 236);
+    font-size: 1.2rem;
+}
+
+.maindiv {
+    display: flex;
+}
+
+
+.sidebar-ul {
+    font-size: 17px;
+}
+
+.btn-toggle:hover, .btn-toggle:focus {
+    color: rgba(0, 0, 0, .85);
+    background-color: rgb(226, 226, 226);
+}
+
+.sidebar-link:hover {
+    color: rgba(0, 0, 0, .85);
+    background-color: rgb(226, 226, 226) !important;
+}
+
+.sidebar-btn {
+    font-size: 20px;
+}
+
+.sidebar-btn:focus {
+    box-shadow: 0 0 0 0 black;
+}
+.sidebar_css {
+    position: fixed;
+    height: 100%;
+}
+.container_css {
+    margin-left: 320px;
+}
+
+.edit-link:hover {
+    filter: opacity(0.7);
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.error-red {
+    color: red;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.text-bg-primary {
+    background-color: #0b5ed7 !important;
+}
+
+.text-bg-success {
+    background-color: green !important;
+}
+
+.text-bg-danger {
+    background-color: red !important;
+}
+
+.text-bg-warning {
+    color: black !important;
+    background-color: yellow !important;
+}

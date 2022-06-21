@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mb-4">Добавить номенклатуру</h1>
+    <hr>
+    <div class="card border-secondary">
+        <div class="card-body">
+            {% include 'partials/nomenclature/nomenclature_form.html' %}
+        </div>
+    </div>
+{% endblock content %}
