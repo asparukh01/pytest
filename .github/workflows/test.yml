@@ -10,13 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Install Python 3
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-      - name: Run tests with pytest
-        run: python manage.py test
+      - name: Publish Unit Test Results
+  	uses: EnricoMi/publish-unit-test-result-action@v1.38
+
