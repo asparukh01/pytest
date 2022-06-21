@@ -137,6 +137,7 @@ if os.environ.get('GITHUB_WORKFLOW'):
             'PORT': '5432',
         }
     }
+    SECRET_KEY = 'django-insecure-bbp5kln3$iqjjmm_j^)66ivw5y7=$hxmr5-nxk1v0eoh&7omyi'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
