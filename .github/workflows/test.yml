@@ -1,15 +1,29 @@
-name: Run Python Tests
+name: Django CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
 
     steps:
-      - name: Publish Unit Test Results
-  	uses: EnricoMi/publish-unit-test-result-action@v1.38
+    - uses: actions/checkout@v3
+    - name: Set up Python '3.8'
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.8'
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run Tests
+      run: |
+        python manage.py test
 
