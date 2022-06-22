@@ -161,6 +161,7 @@ LOGGING = {
             'handlers': ['file'],
             'level': 'INFO',
             'propagate': True,
+        }
     }
 }
 
