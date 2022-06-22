@@ -33,5 +33,4 @@ jobs:
         pip install -r requirements.txt	 
     - name: Run Tests
       run: |
-      	export SECRET_KEY='0-42!#@*6jqo)lv^+@-+&(-@kjke@xzk%)1!w)vz-1uwk71p)='
         python manage.py test
