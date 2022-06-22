@@ -137,6 +137,7 @@ if os.environ.get('GITHUB_WORKFLOW'):
             'PORT': '5432',
         }
     }
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -160,7 +161,6 @@ LOGGING = {
             'handlers': ['file'],
             'level': 'INFO',
             'propagate': True,
-        }
     }
 }
 
