@@ -6,3 +6,4 @@ from services.employee_services import EmployeeServices
 # def upload(local_path, path):
 #     EmployeeServices.upload_image(local_path, path)
 #     return 'success'
+
